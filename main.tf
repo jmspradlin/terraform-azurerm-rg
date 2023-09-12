@@ -1,8 +1,9 @@
-variable "rg" {}
+variable "rg_name" {}
 variable "env" {}
+variable "rg_location"
 resource "azurerm_resource_group" "rg01" {
-  name     = "${var.env}-${var.rg.name}-01"
-  location = var.rg.location
+  name     = "${var.env}-${var.rg_name}-01"
+  location = var.rg_location
 }
 
 terraform {
